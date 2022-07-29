@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -27,9 +26,9 @@ class Todo extends Model
      * Todo 登録
      *
      * @param array $values
-     * @return void
+     * @return self
      */
-    public function create(array $values)
+    public function create(array $values): self
     {
         return parent::create($values);
     }
@@ -39,9 +38,9 @@ class Todo extends Model
      *
      * @param integer $id
      * @param array $values
-     * @return void
+     * @return bool
      */
-    public function updateTodo(int $id, array $values)
+    public function updateTodo(int $id, array $values): bool
     {
         return self::where('id', $id)
             ->update($values);

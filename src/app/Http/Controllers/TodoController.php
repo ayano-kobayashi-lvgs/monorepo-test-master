@@ -48,7 +48,7 @@ class TodoController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse
-     */     
+     */
     public function store(Request $request): RedirectResponse
     {
         $todo = $this->todo->create($request->all(['title']));
@@ -107,7 +107,7 @@ class TodoController extends Controller
      * 削除処理
      *
      * @param  int  $id
-     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function destroy($id): RedirectResponse
     {
