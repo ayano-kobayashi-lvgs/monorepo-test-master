@@ -4,10 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * CreateTodosTable
+ */
 class CreateTodosTable extends Migration
 {
     /**
-     * Run the migrations.
+     * todoテーブル CREATE
      *
      * @return void
      */
@@ -21,7 +24,7 @@ class CreateTodosTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * todoテーブル DROPIF
      *
      * @return void
      */

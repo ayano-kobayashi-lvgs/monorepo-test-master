@@ -4,10 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * CreateUsersTable
+ */
 class CreateUsersTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Users CREATE
      *
      * @return void
      */
@@ -25,7 +28,7 @@ class CreateUsersTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Users DROPIF
      *
      * @return void
      */

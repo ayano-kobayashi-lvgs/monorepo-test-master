@@ -2,112 +2,117 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Todo;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
-// log
-use Illuminate\Support\Facades\Log;
-
+/**
+ * TodoController
+ */
 class TodoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Constructor
      *
-     * @return \Illuminate\Http\Response
+     * @param Todo $todo
      */
-    public function index()
-    {
-        $todos = Todo::all();
+    public function __construct(
+        public Todo $todo,
+    ) {}
+
+    /**
+     * 一覧ページ表示
+     *
+     * @return View
+     */
+    public function index(): View
+    {   
+        $todos = $this->todo->all();
 
         return view('todo.index', compact('todos'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 登録ページ表示
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function create()
+    public function create(): View
     {
         return view('todo.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 登録処理
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+     * @param Request $request
+     * @return RedirectResponse
+     */     
+    public function store(Request $request): RedirectResponse
     {
-        $todo = new Todo();
-        $todo->title = $request->input('title');
-        $todo->save();
+        $todo = $this->todo->create($request->all(['title']));
 
         return redirect('todos')->with(
             'status',
-            $todo->title . 'を登録しました！'
+            "{$todo->title}を登録しました",
         );
     }
 
     /**
-     * Display the specified resource.
+     * 詳細ページ表示
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function show($id)
+    public function show($id): View
     {
-        $todo = Todo::find($id);
+        $todo = $this->todo->getById($id);
 
         return view('todo.show', compact('todo'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 編集ページ表示
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function edit($id)
+    public function edit($id): View
     {
-        $todo = Todo::find($id);
+        $todo = $this->todo->getById($id);
 
         return view('todo.edit', compact('todo'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * 更新処理
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * 
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param integer $id
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id): RedirectResponse
     {
-        $todo = Todo::find($id);
-        $todo->title = $request->input('title');
-        $todo->save();
-
+        $this->todo->updateTodo($id, $request->all(['title']));
+        $todo = $this->todo->getById($id);
+        
         return redirect('todos')->with(
             'status',
-            $todo->title . 'を更新しました！'
+            "{$todo->title}を更新しました",
         );
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 削除処理
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy($id): RedirectResponse
     {
-        $todo = Todo::find($id);
+        $todo = $this->todo->getById($id);
         $todo->delete();
-
-
 
         return redirect('todos')->with(
             'status',
