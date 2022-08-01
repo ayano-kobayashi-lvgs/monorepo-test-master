@@ -10,7 +10,8 @@
                 <form
                     class="form-horizontal"
                     method="POST"
-                    action="/todos/{{ $todo->id }}">
+                    action="{{ route('todos.update', ['id' => $todo->id]) }}"
+                    >
                     @csrf
                     @method('PUT')
                     <div class="form-group">

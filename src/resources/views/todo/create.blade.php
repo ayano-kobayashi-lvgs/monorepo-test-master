@@ -9,7 +9,7 @@
             <div class="card-body">
                 <form
                     method="POST"
-                    action="/todos">
+                    action="{{ route('todos.store') }}">
                     @csrf
                     <div class="form-group">
                         <label

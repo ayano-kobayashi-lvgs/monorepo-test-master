@@ -53,7 +53,7 @@ class TodoController extends Controller
     {
         $todo = $this->todo->create($request->all(['title']));
 
-        return redirect('todos')->with(
+        return redirect()->route('todos.index')->with(
             'status',
             "{$todo->title}を登録しました",
         );
@@ -97,7 +97,7 @@ class TodoController extends Controller
         $this->todo->updateTodo($id, $request->all(['title']));
         $todo = $this->todo->getById($id);
         
-        return redirect('todos')->with(
+        return redirect()->route('todos.index')->with(
             'status',
             "{$todo->title}を更新しました",
         );
@@ -109,12 +109,12 @@ class TodoController extends Controller
      * @param  int  $id
      * @return RedirectResponse
      */
-    public function destroy($id): RedirectResponse
+    public function delete($id): RedirectResponse
     {
         $todo = $this->todo->getById($id);
         $todo->delete();
 
-        return redirect('todos')->with(
+        return redirect()->route('todos.index')->with(
             'status',
             $todo->title . 'を削除しました！'
         );

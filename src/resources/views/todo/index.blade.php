@@ -16,7 +16,7 @@
                 @endif
                 <a 
                     class="btn btn-success mb-3"
-                    href="{{ url('todos/create') }}">
+                    href="{{ route('todos.create') }}">
                     登録
                 </a>
                 <table class="table">
@@ -37,14 +37,14 @@
                             <td>
                                 <a 
                                     class="btn btn-info"
-                                    href="{{ url('todos/' . $todo->id) }}">
+                                    href="{{ route('todos.show', ['id' => $todo->id]) }}">
                                     詳細
                                 </a>
                             </td>
                             <td>
                                 <a 
                                     class="btn btn-primary"
-                                    href="{{ url('todos/' . $todo->id . '/edit') }}">
+                                    href="{{ route('todos.edit', ['id' => $todo->id]) }}">
                                     編集
                                 </a>
                             </td>
@@ -52,7 +52,7 @@
                                 <form
                                     method="POST"
                                     action="/todos/{{ $todo->id }}"
-                                    href="{{ url('todos/' . $todo->id . '/delete') }}">
+                                    href="{{ route('todos.delete', ['id' => $todo->id]) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">削除</button>

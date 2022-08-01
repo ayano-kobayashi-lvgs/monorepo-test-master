@@ -19,7 +19,7 @@
                 </table>
                 <a 
                     class="btn btn-info"            
-                    href="{{ url('todos') }}">
+                    href="{{ route('todos.index') }}">
                     戻る
                 </a>
             </div>
