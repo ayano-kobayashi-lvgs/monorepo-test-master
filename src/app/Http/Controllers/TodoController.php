@@ -116,7 +116,7 @@ class TodoController extends Controller
 
         return redirect()->route('todos.index')->with(
             'status',
-            $todo->title . 'を削除しました！'
+            "{$todo->title}を削除しました",
         );
     }
 }

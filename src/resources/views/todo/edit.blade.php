@@ -10,8 +10,7 @@
                 <form
                     class="form-horizontal"
                     method="POST"
-                    action="{{ route('todos.update', ['id' => $todo->id]) }}"
-                    >
+                    action="{{ route('todos.update', ['id' => $todo->id]) }}">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -27,8 +26,7 @@
                         class="form-control"
                         name="title"
                         type="text"
-                        value="{{ $todo->title }}"
-                        >
+                        value="{{ $todo->title }}">
                     </div>
                     <button 
                         class="btn btn-primary"
