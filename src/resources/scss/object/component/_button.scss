@@ -1,0 +1,23 @@
+/*--------------------------------------*
+ * button
+ *--------------------------------------*/
+ @use "../../foundation/variable" as *;
+
+ .c-btn {
+    text-decoration: none;
+    font-size: $font-ms;
+    font-weight: bold;
+    // width: 10em;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    justify-content: center;
+    border: none;
+    line-height: 1.3;
+
+    &:hover {
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+}
