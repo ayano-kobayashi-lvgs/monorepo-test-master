@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ユーザ登録</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="{{ asset('/img/gopher.gif') }}" type="image/gif" >
   </head>
   <body>
-    <div class="c-section">
+    <div class="c-section p-register">
         <div class="c-section__inner">
-            <div class="c-section__box p-regist__box">
-                <div class="c-section__boxInner">
-                    <h1 class="c-section__title p-regist__title">
+            <div class="c-section__box">
+                <div class="c-section__boxInner p-register__boxInner">
+                    <h1 class="c-section__title">
                         ユーザ登録
                     </h1>
                     <form
-                        class="c-section__form"
+                        class="c-section__form p-register__form"
                         action="{{ route('auth.register') }}"
                         method="post">
-                        {{csrf_field()}}
-                        <div class="c-section__formItem p-regist__formItem">
+                        @csrf
+                        <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
                                 <label class="c-section__formTitle">氏名</label>
                                 <span class="c-section__formLabel c-section__formLabel--required">必須</span>
@@ -34,7 +35,7 @@
                             </div>
                             <p class="c-section__formError">{{ $errors->first('name') }}</p>
                         </div>
-                        <div class="c-section__formItem p-regist__formItem">
+                        <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
                                 <label class="c-section__formTitle">メールアドレス</label>
                                 <span class="c-section__formLabel c-section__formLabel--required">必須</span>
@@ -49,7 +50,7 @@
                             </div>
                             <p class="c-section__formError">{{ $errors->first('email') }}</p>
                         </div>
-                        <div class="c-section__formItem p-regist__formItem">
+                        <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
                                 <label class="c-section__formTitle">パスワード</label>
                                 <span class="c-section__formLabel c-section__formLabel--required">必須</span>
@@ -63,7 +64,7 @@
                             </div>
                             <p class="c-section__formError">{{ $errors->first('password') }}</p>
                         </div>
-                        <div class="c-section__formItem p-regist__formItem">
+                        <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
                                 <label class="c-section__formTitle">パスワード(確認)</label>
                                 <span class="c-section__formLabel c-section__formLabel--required">必須</span>

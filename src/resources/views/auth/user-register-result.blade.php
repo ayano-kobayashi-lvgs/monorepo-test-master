@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ユーザ登録完了</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="{{ asset('/img/gopher.gif') }}" type="image/gif" >
   </head>
   <body>
     <div class="c-section">
@@ -16,13 +17,10 @@
                     </h1>
                     <p class="c-section__body">ユーザ登録が完了しました。</p>
                     <div class="c-section__btnWrap">
-                        <button
-                            class="c-btn c-section__btn c-section__btn--small"
-                            type="submit"
-                            name="action"
-                            value="send">
-                            ログイン
-                        </button>
+                        <p
+                            class="c-btn c-section__btn c-section__btn--small">
+                            <a href="{{ route('auth.login') }}">ログイン</a>
+                        </p>
                     </div>
                 </div>
             </div>
