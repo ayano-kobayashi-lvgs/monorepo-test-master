@@ -3,7 +3,6 @@
  *--------------------------------------*/
  @use "../../foundation/variable" as *;
 
-// c-section
  .c-section {
     padding: 5% 15%;
     width: 100%;
@@ -33,6 +32,7 @@
         text-align: center;
         margin-top: 0;
         margin-bottom: 1em;
+        font-weight: bold;
     }
 
     &__form {

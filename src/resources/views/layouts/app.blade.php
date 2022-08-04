@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Todo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="{{ asset('/img/gopher.gif') }}" type="image/gif" >
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light mb-3">
-        <a class="navbar-brand" href="{{ url('todo') }}">Todoリスト</a>
+    <nav class="navbar-light mb-3 c-menu">
+        <a class="navbar-brand c-menu__title" href="{{ url('todo') }}">Todoリスト</a>
+        @if( \Auth::check() )
+        <div class="c-menu__itemWrap">
+            <p class="c-menu__text">こんにちは、{{ $name }}さん</p>
+            @endif
+            <p class="c-btn c-menu__btn">
+                <a
+                    href="{{ route('auth.logout') }}">
+                    ログアウト
+                </a>
+            </p>
+        </div>
     </nav>
     <div class="container-fluid">
         @yield('content')

@@ -137,6 +137,9 @@ a {
   transition: all 0.3s;
 }
 
+.c-form {
+  font-size: 16px;
+}
 .c-form__inner {
   position: relative;
   display: block;
@@ -160,6 +163,40 @@ a {
 }
 .c-inner__header {
   padding: 24px 15% 0 15%;
+}
+
+/*--------------------------------------*
+ * menu
+ *--------------------------------------*/
+.c-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em;
+  align-items: center;
+  background-color: #fffdf9;
+}
+.c-menu__title {
+  font-size: 18px;
+  color: #576573;
+  font-weight: bold;
+}
+.c-menu__itemWrap {
+  display: flex;
+  align-items: center;
+}
+.c-menu__text {
+  font-size: 14px;
+  color: #576573;
+  margin-right: 1.3em;
+}
+.c-menu__btn {
+  background-color: #00325C;
+  border: none;
+  padding: 0.7em;
+}
+.c-menu__btn a {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 /*--------------------------------------*
@@ -190,6 +227,7 @@ a {
   text-align: center;
   margin-top: 0;
   margin-bottom: 1em;
+  font-weight: bold;
 }
 .c-section__formItem {
   margin: 0 auto 1.5em auto;
@@ -251,6 +289,36 @@ a {
 }
 .p-register__boxInner {
   width: 75%;
+}
+
+/*--------------------------------------*
+ * table
+ *--------------------------------------*/
+.c-table {
+  font-size: 16px;
+}
+.c-table__title {
+  font-size: 18px;
+}
+.c-table__msg {
+  font-size: 16px;
+}
+.c-table th {
+  font-weight: bold;
+}
+
+.p-register {
+  padding: 5% 20%;
+}
+.p-register__boxInner {
+  width: 75%;
+}
+
+.p-login {
+  padding: 5% 25%;
+}
+.p-login__boxInner {
+  width: 65%;
 }
 
 /*--------------------------------------*
@@ -401,6 +469,9 @@ a {
   transition: all 0.3s;
 }
 
+.c-form {
+  font-size: 16px;
+}
 .c-form__inner {
   position: relative;
   display: block;
@@ -424,6 +495,40 @@ a {
 }
 .c-inner__header {
   padding: 24px 15% 0 15%;
+}
+
+/*--------------------------------------*
+ * menu
+ *--------------------------------------*/
+.c-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em;
+  align-items: center;
+  background-color: #fffdf9;
+}
+.c-menu__title {
+  font-size: 18px;
+  color: #576573;
+  font-weight: bold;
+}
+.c-menu__itemWrap {
+  display: flex;
+  align-items: center;
+}
+.c-menu__text {
+  font-size: 14px;
+  color: #576573;
+  margin-right: 1.3em;
+}
+.c-menu__btn {
+  background-color: #00325C;
+  border: none;
+  padding: 0.7em;
+}
+.c-menu__btn a {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 /*--------------------------------------*
@@ -454,6 +559,7 @@ a {
   text-align: center;
   margin-top: 0;
   margin-bottom: 1em;
+  font-weight: bold;
 }
 .c-section__formItem {
   margin: 0 auto 1.5em auto;
@@ -508,6 +614,36 @@ a {
   margin-bottom: 1.5em;
   color: #576573;
   font-size: 16px;
+}
+
+/*--------------------------------------*
+ * table
+ *--------------------------------------*/
+.c-table {
+  font-size: 16px;
+}
+.c-table__title {
+  font-size: 18px;
+}
+.c-table__msg {
+  font-size: 16px;
+}
+.c-table th {
+  font-weight: bold;
+}
+
+.p-register {
+  padding: 5% 20%;
+}
+.p-register__boxInner {
+  width: 75%;
+}
+
+.p-login {
+  padding: 5% 25%;
+}
+.p-login__boxInner {
+  width: 65%;
 }
 
 /*--------------------------------------*

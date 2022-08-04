@@ -3,17 +3,17 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header c-table__title">
                 詳細画面
             </div>
             <div class="card-body">
-                <table class="table">
+                <table class="table c-table">
                     <tr>
                         <th>id</th>
                         <td>{{$todo->id}}</td>
                     </tr>
                     <tr>
-                        <td>title</td>
+                        <th>title</th>
                         <td>{{$todo->title}}</td>
                     </tr>
                 </table>

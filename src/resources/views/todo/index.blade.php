@@ -3,13 +3,13 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header c-table__title">
                 一覧画面
             </div>
             <div class="card-body">
                 @if (session('status'))
                 <div 
-                    class="alert alert-success"
+                    class="alert alert-success c-table__msg"
                     role="alert">
                     {{ session('status') }}
                 </div>
@@ -19,7 +19,7 @@
                     href="{{ route('todos.create') }}">
                     登録
                 </a>
-                <table class="table">
+                <table class="table c-table">
                     <thead>
                         <tr>
                             <th>id</th>

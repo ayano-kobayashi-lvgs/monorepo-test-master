@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
@@ -14,17 +16,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('auth')
-  ->name('auth.')
-  ->group(function () {
+Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
   Route::get('/register', [UserController::class, 'register'])->name('register');
+  Route::get('/login', [LoginController::class, 'getLoginPage'])->name('login');
+  Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 });
 
 Route::post('auth/register', [UserController::class, 'completeRegister'])->name('auth.completeRegister');
+Route::post('auth/login', [LoginController::class, 'authenticateUser'])->name('auth.login');
 
-Route::prefix('todos')
-  ->name('todos.')
-  ->group(function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'todos', 'as' => 'todos.'], function () {
   Route::get('/', [TodoController::class, 'index'])->name('index');
   Route::get('/create', [TodoController::class, 'create'])->name('create');
   Route::get('/{id}', [TodoController::class, 'show'])->name('show');

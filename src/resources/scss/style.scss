@@ -11,9 +11,12 @@
  @use "object/component/button";
  @use "object/component/form";
  @use "object/component/inner";
+ @use "object/component/menu";
  @use "object/component/section";
+ @use "object/component/table";
 
 /*--------------------------------------*
  * project
  *--------------------------------------*/
  @use "object/project/user-register";
+ @use "object/project/login";
