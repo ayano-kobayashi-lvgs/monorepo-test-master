@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ユーザ登録</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="{{ asset('/img/gopher.gif') }}" type="image/gif" >
-  </head>
-  <body>
+@extends('layouts.app')
+@section('title', 'ユーザ登録')
+@section('css')
+        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+@endsection
+<body>
     <div class="c-section p-register">
         <div class="c-section__inner">
             <div class="c-section__box">
@@ -17,7 +13,7 @@
                     </h1>
                     <form
                         class="c-section__form p-register__form"
-                        action="{{ route('auth.register') }}"
+                        action="{{ route('auth.completeRegister') }}"
                         method="post">
                         @csrf
                         <div class="c-section__formItem">
@@ -59,8 +55,7 @@
                                 <input
                                     class="c-form__inner"
                                     type="password"
-                                    name="password"
-                                    >
+                                    name="password">
                             </div>
                             <p class="c-section__formError">{{ $errors->first('password') }}</p>
                         </div>
@@ -73,8 +68,7 @@
                                 <input
                                     class="c-form__inner"
                                     type="password"
-                                    name="password_confirmation"
-                                    >
+                                    name="password_confirmation">
                             </div>
                             <p class="c-section__formError">{{ $errors->first('password_confirmation') }}</p>
                         </div>
@@ -92,5 +86,4 @@
             </div>
         </div>
     </div>
-  </body>
-</html>
+</body>
