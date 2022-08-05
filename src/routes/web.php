@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('auth')
   ->name('auth.')
   ->group(function () {
-  Route::get('/register', [UserController::class, 'register'])->name('register');
+  Route::get('/register', [UserController::class, 'showRegister'])->name('register');
 });
 
-Route::post('auth/register', [UserController::class, 'completeRegister'])->name('auth.completeRegister');
+Route::post('auth/register', [UserController::class, 'executeRegister'])->name('auth.completeRegister');
 
 Route::prefix('todos')
   ->name('todos.')

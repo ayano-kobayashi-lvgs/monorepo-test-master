@@ -40,14 +40,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * ユーザ登録処理
+     */
     public function create(array $values)
     {
-        $user = [
-            'name' => $values['name'],
-            'email' => $values['email'],
-            'password' => Hash::make($values['password']),
-        ];
-
-        return parent::create($user);
+        return parent::create($values);
     }
 }
