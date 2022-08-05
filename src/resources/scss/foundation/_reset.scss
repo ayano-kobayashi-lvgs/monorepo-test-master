@@ -29,11 +29,11 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 } */
 body {
-	font-size: 1.6rem;
-	font-family: "sans-serif", "Hiragino Kaku Gothic ProN", "Poppins", "Helvetica", "sans-serif", "Poppins Bold", Helvetica, sans-serif;
-	min-width: 350px;
-	width: 100%;
-	overflow-x: hidden;
+  font-size: 1.6rem;
+  font-family: "sans-serif", "Hiragino Kaku Gothic ProN", "Poppins", "Helvetica", "sans-serif", "Poppins Bold", Helvetica, sans-serif;
+  min-width: 350px;
+  width: 100%;
+  overflow-x: hidden;
   line-height: 1.6;
   letter-spacing: 1.5;
 }
@@ -60,13 +60,13 @@ table {
 img,
 video,
 object {
-	max-width: 100%;
-	height: auto;
-	border: none;
-	display: block;
+  max-width: 100%;
+  height: auto;
+  border: none;
+  display: block;
 }
 
 a {
-	text-decoration: none;
-	transition: 0.4s;
+  text-decoration: none;
+  transition: 0.4s;
 }

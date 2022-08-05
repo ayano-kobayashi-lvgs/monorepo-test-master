@@ -18,20 +18,18 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
   Route::get('/register', [UserController::class, 'register'])->name('register');
-  Route::get('/login', [LoginController::class, 'getLoginPage'])->name('login');
+  Route::post('/register', [UserController::class, 'completeRegister'])->name('auth.completeRegister');
+  Route::get('/login', [LoginController::class, 'index'])->name('login');
   Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+  Route::post('/login', [LoginController::class, 'login'])->name('auth.login');
 });
-
-Route::post('auth/register', [UserController::class, 'completeRegister'])->name('auth.completeRegister');
-Route::post('auth/login', [LoginController::class, 'authenticateUser'])->name('auth.login');
 
 Route::group(['middleware' => 'auth', 'prefix' => 'todos', 'as' => 'todos.'], function () {
   Route::get('/', [TodoController::class, 'index'])->name('index');
   Route::get('/create', [TodoController::class, 'create'])->name('create');
   Route::get('/{id}', [TodoController::class, 'show'])->name('show');
   Route::get('/{id}/edit', [TodoController::class, 'edit'])->name('edit');
+  Route::post('/store', [TodoController::class, 'store'])->name('todos.store');
+  Route::put('/{id}', [TodoController::class, 'update'])->name('todos.update');
+  Route::delete('/{id}', [TodoController::class, 'delete'])->name('todos.delete');
 });
-
-Route::post('todos/store', [TodoController::class, 'store'])->name('todos.store');
-Route::put('todos/{id}', [TodoController::class, 'update'])->name('todos.update');
-Route::delete('todos/{id}', [TodoController::class, 'delete'])->name('todos.delete');

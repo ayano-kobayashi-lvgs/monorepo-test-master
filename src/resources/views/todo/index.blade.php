@@ -1,5 +1,11 @@
 @extends("layouts.app")
+@section('title', 'Todo一覧')
 @section("content")
+@section('css')
+        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+@endsection
+<x-menu />
+<div class="container-fluid">
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -66,4 +72,3 @@
         </div>
     </div>
 </div>
-@endsection
