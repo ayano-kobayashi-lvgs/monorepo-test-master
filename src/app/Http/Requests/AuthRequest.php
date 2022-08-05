@@ -2,40 +2,27 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
 /**
  * Auth FormRequest
  */
-class AuthRequest extends FormRequest
+class AuthRequest extends BaseRequest
 {
-    /**
-     * Autorize
-     */
-    public function authorize()
-    {
-        return true;
-    }
-
     /**
      * Rules
      */
     public function rules()
     {
         return [
-            'email'=>'required|email',
-            'password' => 'required',
-        ];
-    }
-
-    /**
-     * Attribute
-     */
-    public function attributes()
-    {
-        return [
-            'email' => 'メールアドレス',
-            'password' => 'パスワード',
+            'email' =>  [
+                'required',
+                'string',
+                'email',
+                'max:254',
+            ],
+            'password' => [
+                'required',
+                'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,24}$/',
+            ],
         ];
     }
 
@@ -44,10 +31,8 @@ class AuthRequest extends FormRequest
      */
     public function messages()
     {
-        return [
-            'email.required' => ':attributeを入力してください。',
-            'email.email' => ':attributeを正しい形式で入力してください。',
-            'password.required' => ':attributeを入力してください。',
-        ];
+        return array_merge([
+            'password.regex' => '英大文字・小文字・数字の組み合わせ(8~24桁)で入力してください。',
+        ], BaseRequest::BASE_RULES);
     }
 }

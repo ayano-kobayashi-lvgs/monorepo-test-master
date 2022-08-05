@@ -26,9 +26,8 @@ class ComposeServiceProvider extends ServiceProvider
     {
         View::composer('*', function($view) {
             if(auth()->check()) {
-                
                 $name = auth()->user()->name;
-                $view->with('name', $name);
+                $view->with(compact('name'));
             }
         });
     }

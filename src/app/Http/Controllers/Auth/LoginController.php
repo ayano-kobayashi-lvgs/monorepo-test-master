@@ -14,7 +14,7 @@ class LoginController extends Controller
     /**
      * ログイン画面表示
      */ 
-    public function getLoginPage()
+    public function index()
     {
         return view('auth.login');
     }
@@ -22,18 +22,14 @@ class LoginController extends Controller
     /**
      * ログイン処理
      */
-    public function authenticateUser(AuthRequest $request)
+    public function login(AuthRequest $request)
     {
-        $cledentials = $request->validated();
-        
-        if (Auth::attempt($cledentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended(route('todos.index'));
+        if (!(Auth::attempt($request->validated()))) {
+            return redirect()->route('auth.login')->with('isLoginError', true);
         }
 
-        return redirect()->route('auth.login')->withErrors([
-            'authError' => 'メールアドレスまたはパスワードが一致しません。',
-        ]);
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('todos.index'));
     }
 }
