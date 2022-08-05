@@ -3,7 +3,6 @@
  *--------------------------------------*/
  @use "../../foundation/variable" as *;
 
-// c-section
  .c-section {
     padding: 5% 15%;
     width: 100%;
@@ -26,7 +25,6 @@
         width: 75%;
     }
 
-
     &__title {
         color: $c-dark-navy-01;
         font-size: $font-l;
@@ -35,44 +33,42 @@
         margin-bottom: 1em;
     }
 
-    &__form {
-        &Item {
-            margin: 0 auto 1.5em auto;
-        }
+    &__formItem {
+        margin: 0 auto 1.5em auto;
+    }
 
-        &TitleWrap {
-            align-items: baseline;
-            margin-bottom: 0.25em;
-        }
+    &__formTitleWrap {
+        align-items: baseline;
+        margin-bottom: 0.25em;
+    }
 
-        &Title {
-            color: $c-dark-gray;
-            font-size: $font-m;
-            font-weight: bold;
-        }
+    &__formTitle {
+        color: $c-dark-gray;
+        font-size: $font-m;
+        font-weight: bold;
+    }
 
-        &Label {
-            font-size: $font-xs;
-            padding: 0.3em;
-            color: $c-white;
-            line-height: 2;
-            border-radius: 2px;
-            margin-left: 0.2em;
+    &__formLabel {
+        font-size: $font-xs;
+        padding: 0.3em;
+        color: $c-white;
+        line-height: 2;
+        border-radius: 2px;
+        margin-left: 0.2em;
 
-            &--required {
-                background-color: $c-orange-01;
-            }
+        &--required {
+            background-color: $c-orange-01;
         }
+    }
 
-        &Box {
-            width: 100%;
-        }
+    &__formBox {
+        width: 100%;
+    }
 
-        &Error {
-            color: $c-orange-02;
-            font-weight: bold;
-            font-size: $font-ms;
-        }
+    &__formError {
+        color: $c-orange-02;
+        font-weight: bold;
+        font-size: $font-ms;
     }
 
     &__btn {
@@ -93,6 +89,11 @@
         &:hover {
             background-color: $c-dark-navy-02;
             border: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: $c-white;
         }
     }
 
