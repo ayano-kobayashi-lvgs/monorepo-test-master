@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * User FormRequest
+ * Base FormRequest
  */
 class BaseRequest extends FormRequest
 {
