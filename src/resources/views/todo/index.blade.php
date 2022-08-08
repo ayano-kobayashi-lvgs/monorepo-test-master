@@ -12,7 +12,7 @@
                 一覧画面
             </div>
             <div class="card-body">
-                @if (session('status'))
+                @if(session('status'))
                 <div 
                     class="alert alert-success c-table__msg"
                     role="alert">

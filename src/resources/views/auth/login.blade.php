@@ -17,7 +17,7 @@
                         </h1>
                         <form
                             class="c-section__form"
-                            action="{{route('auth.login')}}"
+                            action="{{ route('auth.login') }}"
                             method="post">
                             @csrf
                             @if(session('isLoginError'))

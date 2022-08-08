@@ -24,7 +24,7 @@ class LoginController extends Controller
      */
     public function login(AuthRequest $request)
     {
-        if (!(Auth::attempt($request->validated()))) {
+        if (!Auth::attempt($request->validated())) {
             return redirect()->route('auth.login')->with('isLoginError', true);
         }
 
