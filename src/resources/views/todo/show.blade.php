@@ -12,11 +12,11 @@
                     <table class="table">
                         <tr>
                             <th>id</th>
-                            <td>{{$todo->id}}</td>
+                            <td>{{ $todo->id }}</td>
                         </tr>
                         <tr>
                             <td>title</td>
-                            <td>{{$todo->title}}</td>
+                            <td>{{ $todo->title }}</td>
                         </tr>
                     </table>
                     <a 

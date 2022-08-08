@@ -43,6 +43,6 @@ class UserRequest extends BaseRequest
             'password.regex' => '英大文字・小文字・数字の組み合わせ(8~24桁)で入力してください。',
             'password.confirmed' => 'パスワードが一致しません。',
             'password_confirmation.regex' => '英大文字・小文字・数字の組み合わせ(8~24桁)で入力してください。',
-        ], BaseRequest::BASE_RULES);
+        ], self::BASE_RULES);
     }
 }

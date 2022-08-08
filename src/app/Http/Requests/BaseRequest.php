@@ -9,7 +9,6 @@ use Illuminate\Foundation\Http\FormRequest;
  */
 class BaseRequest extends FormRequest
 {
-
     const BASE_RULES = [
         '*.required' => '必須入力です。',
         '*.string' => '入力内容に誤りがあります。',

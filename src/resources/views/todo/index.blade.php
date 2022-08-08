@@ -53,8 +53,8 @@
                                 <td>
                                     <form
                                         method="POST"
-                                        action="/todos/{{ $todo->id }}"
-                                        href="{{ route('todos.delete', ['id' => $todo->id]) }}">
+                                        action="{{ route('todos.delete', ['id' => $todo->id]) }}"
+                                        type="submit">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger">削除</button>
