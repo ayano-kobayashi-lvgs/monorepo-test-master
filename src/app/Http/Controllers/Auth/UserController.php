@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * UserController
@@ -26,7 +27,7 @@ class UserController extends Controller
      *
      * @return View
      */ 
-    public function register(): View
+    public function showRegister(): View
     {
         return view('auth.user-register');
     }
@@ -37,12 +38,12 @@ class UserController extends Controller
      * @param UserRequest $request
      * @return View
      */
-    public function completeRegister(UserRequest $request): View
+    public function executeRegister(UserRequest $request): View
     {
-        $values = $request->validated();
-        
-        $this->user->create($values);
+        $values = $request->merge(['password' => Hash::make($request->password)]);
 
-        return view('auth.user-register-result');
+        $this->user->create($values->only(['name', 'email', 'password',]));
+
+        return view('auth.user-register-complete');
     }
 }
