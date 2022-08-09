@@ -1,0 +1,40 @@
+/*--------------------------------------*
+ * menu
+ *--------------------------------------*/
+ @use "../../foundation/variable" as *;
+
+ .c-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8em;
+    align-items: center;
+    background-color: $c-ivory-01;
+
+    &__title {
+        font-size: $font-ml;
+        color: $c-dark-gray;
+        font-weight: bold;
+    }
+
+    &__itemWrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &__text {
+        font-size: $font-ms;
+        color: $c-dark-gray;
+        margin-right: 1.3em;
+    }
+
+    &__btn {
+        background-color: $c-dark-navy-01;
+        border: none;
+        padding: 0.7em;
+
+        a {
+            text-decoration: none;
+            color: $c-white;
+        }
+    }
+}

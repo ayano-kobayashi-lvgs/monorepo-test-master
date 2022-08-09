@@ -1,0 +1,20 @@
+/*--------------------------------------*
+ * table
+ *--------------------------------------*/
+ @use "../../foundation/variable" as *;
+
+ .c-table {
+    font-size: $font-m;
+
+    &__title {
+      font-size: $font-ml;
+    }
+
+    &__msg {
+      font-size: $font-m;
+    }
+
+    & th {
+      font-weight: bold;
+    }
+}

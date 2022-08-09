@@ -15,7 +15,7 @@
                     <div class="c-section__btnWrap">
                         <p
                             class="c-btn c-section__btn c-section__btn--small">
-                            <a href="">ログイン</a>
+                            <a href="{{ route('auth.login') }}">ログイン</a>
                         </p>
                     </div>
                 </div>

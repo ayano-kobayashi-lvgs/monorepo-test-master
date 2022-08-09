@@ -4,6 +4,8 @@
 @use "../../foundation/variable" as *;
 
 .c-form {
+    font-size: $font-m;
+
     &__inner {
         position: relative;
         display: block;

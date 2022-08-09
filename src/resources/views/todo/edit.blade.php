@@ -1,16 +1,19 @@
 @extends("layouts.app")
 @section('title', 'Todo編集')
+@section('css')
+        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+@endsection
 <x-menu />
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header c-table__title">
                     編集画面
                 </div>
                 <div class="card-body">
                     <form
-                        class="form-horizontal"
+                        class="form-horizontal c-form"
                         method="POST"
                         action="{{ route('todos.update', ['id' => $todo->id]) }}">
                         @csrf
