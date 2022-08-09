@@ -1,19 +1,19 @@
 /*--------------------------------------*
  * foundation
  *--------------------------------------*/
- @use "foundation/base";
- @use "foundation/reset";
- @use "foundation/variable";
+@use "foundation/base";
+@use "foundation/reset";
+@use "foundation/variable";
 
 /*--------------------------------------*
  * component
  *--------------------------------------*/
- @use "object/component/button";
- @use "object/component/form";
- @use "object/component/inner";
- @use "object/component/section";
+@use "object/component/button";
+@use "object/component/form";
+@use "object/component/inner";
+@use "object/component/section";
 
 /*--------------------------------------*
  * project
  *--------------------------------------*/
- @use "object/project/user-register";
+@use "object/project/user-register";
