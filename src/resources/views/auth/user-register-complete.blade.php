@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'ユーザ登録')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <body>
     <div class="c-section p-register">
