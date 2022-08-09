@@ -1,15 +1,15 @@
 /*--------------------------------------*
  * section
  *--------------------------------------*/
- @use "../../foundation/variable" as *;
+@use "../../foundation/variable" as *;
 
- .c-section {
+.c-section {
     padding: 5% 15%;
     width: 100%;
     box-sizing: border-box;
 
     &__inner {
-       margin: 0 auto;
+        margin: 0 auto;
     }
 
     &__box {
