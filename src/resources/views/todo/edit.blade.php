@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section('title', 'Todo編集')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <x-menu />
 <div class="container-fluid">
@@ -33,7 +33,7 @@
                             type="text"
                             value="{{ $todo->title }}">
                         </div>
-                        <button 
+                        <button
                             class="btn btn-primary"
                             type="submit">
                             更新

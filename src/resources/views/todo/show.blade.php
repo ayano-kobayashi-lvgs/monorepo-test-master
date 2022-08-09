@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section('title', 'Todo詳細')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <x-menu />
 <div class="container-fluid">
@@ -22,8 +22,8 @@
                             <td>{{$todo->title}}</td>
                         </tr>
                     </table>
-                    <a 
-                        class="btn btn-info"            
+                    <a
+                        class="btn btn-info"
                         href="{{ route('todos.index') }}">
                         戻る
                     </a>

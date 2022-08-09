@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section('title', 'Todo一覧')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <x-menu />
 <div class="container-fluid">
@@ -13,25 +13,29 @@
             </div>
             <div class="card-body">
                 @if(session('status'))
-                <div 
+                <div
                     class="alert alert-success c-table__msg"
                     role="alert">
                     {{ session('status') }}
                 </div>
                 @endif
-                <a 
+                @can('isAdmin')
+                <a
                     class="btn btn-success mb-3"
                     href="{{ route('todos.create') }}">
                     登録
                 </a>
+                @endcan
                 <table class="table c-table">
                     <thead>
                         <tr>
                             <th>id</th>
                             <th>title</th>
                             <th></th>
+                            @can('isAdmin')
                             <th></th>
                             <th></th>
+                            @endcan
                         </tr>
                     </thead>
                     <tbody>
@@ -40,14 +44,15 @@
                             <td>{{ $todo->id }}</td>
                             <td>{{ $todo->title }}</td>
                             <td>
-                                <a 
+                                <a
                                     class="btn btn-info"
                                     href="{{ route('todos.show', ['id' => $todo->id]) }}">
                                     詳細
                                 </a>
                             </td>
+                            @can('isAdmin')
                             <td>
-                                <a 
+                                <a
                                     class="btn btn-primary"
                                     href="{{ route('todos.edit', ['id' => $todo->id]) }}">
                                     編集
@@ -63,6 +68,7 @@
                                     <button class="btn btn-danger">削除</button>
                                 </form>
                             </td>
+                            @endcan
                         </tr>
                         @endforeach
                     </tbody>
