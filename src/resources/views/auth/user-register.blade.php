@@ -72,6 +72,22 @@
                             </div>
                             <p class="c-section__formError">{{ $errors->first('password_confirmation') }}</p>
                         </div>
+                        <div class="c-section__formItem">
+                            <div class="c-section__formTitleWrap">
+                                <label class="c-section__formTitle">権限</label>
+                                <span class="c-section__formLabel c-section__formLabel--required">必須</span>
+                            </div>
+                            <div class="c-section__formBox">
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    value="user">ユーザー
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    value="admin">管理者
+                            </div>
+                        </div>
                         <div class="c-section__btnWrap">
                             <button
                                 class="c-btn c-section__btn c-section__btn--big"

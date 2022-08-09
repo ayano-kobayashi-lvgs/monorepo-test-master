@@ -18,15 +18,16 @@ class UserController extends Controller
      *
      * @return void
      */
-    public function __construct (
+    public function __construct(
         public User $user,
-    ) {}
-    
+    ) {
+    }
+
     /**
      * ユーザ登録画面表示
      *
      * @return View
-     */ 
+     */
     public function showRegister(): View
     {
         return view('auth.user-register');
@@ -40,9 +41,12 @@ class UserController extends Controller
      */
     public function executeRegister(UserRequest $request): View
     {
-        $values = $request->merge(['password' => Hash::make($request->password)]);
-
-        $this->user->create($values->only(['name', 'email', 'password',]));
+        $this->user->create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
+        ]);
 
         return view('auth.user-register-complete');
     }
