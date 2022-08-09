@@ -5,11 +5,10 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * User FormRequest
+ * Base FormRequest
  */
 class BaseRequest extends FormRequest
 {
-
     const BASE_RULES = [
         '*.required' => '必須入力です。',
         '*.string' => '入力内容に誤りがあります。',

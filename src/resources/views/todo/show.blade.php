@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section('title', 'Todo詳細')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <x-menu />
 <div class="container-fluid">
@@ -15,11 +15,11 @@
                     <table class="table c-table">
                         <tr>
                             <th>id</th>
-                            <td>{{$todo->id}}</td>
+                            <td>{{ $todo->id }}</td>
                         </tr>
                         <tr>
-                            <th>title</th>
-                            <td>{{$todo->title}}</td>
+                            <td>title</td>
+                            <td>{{ $todo->title }}</td>
                         </tr>
                     </table>
                     <a 

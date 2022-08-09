@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section('title', 'Todo一覧')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <x-menu />
 <div class="container-fluid">

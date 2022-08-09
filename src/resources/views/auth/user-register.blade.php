@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'ユーザ登録')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <body>
     <div class="c-section p-register">
@@ -14,7 +14,7 @@
                     <form
                         class="c-section__form p-register__form"
                         action="{{ route('auth.completeRegister') }}"
-                        method="post">
+                        method="POST">
                         @csrf
                         <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
@@ -22,7 +22,7 @@
                                 <span class="c-section__formLabel c-section__formLabel--required">必須</span>
                             </div>
                             <div class="c-section__formBox">
-                                <input 
+                                <input
                                     class="c-form__inner"
                                     type="text"
                                     name="name"

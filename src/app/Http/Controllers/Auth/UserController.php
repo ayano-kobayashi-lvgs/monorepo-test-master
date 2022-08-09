@@ -40,9 +40,11 @@ class UserController extends Controller
      */
     public function executeRegister(UserRequest $request): View
     {
-        $values = $request->merge(['password' => Hash::make($request->password)]);
-
-        $this->user->create($values->only(['name', 'email', 'password',]));
+        $this->user->create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
 
         return view('auth.user-register-complete');
     }
