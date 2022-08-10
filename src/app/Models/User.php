@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\Role;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Hash;
 
 /**
  * User
@@ -40,6 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * 管理者権限の判断ロジック
+     */
+    public function isAdmin()
+    {
+        return Role::isAdmin($this->role);
+    }
 
     /**
      * ユーザ登録処理

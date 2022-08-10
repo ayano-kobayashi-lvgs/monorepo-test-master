@@ -1,3 +1,4 @@
+@extends('layouts.app')
 @section('title', 'アクセスエラー')
 @section('css')
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">

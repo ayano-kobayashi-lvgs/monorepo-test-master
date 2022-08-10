@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('isAdmin', function (User $user) {
-            return $user->role === 'admin';
+            return $user->isAdmin();
         });
     }
 }

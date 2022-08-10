@@ -9,27 +9,32 @@ use App\Models\User;
  */
 class TodoPolicy
 {
+    public function __construct(
+        public User $user,
+    ) {
+    }
+
     /**
      * 登録処理
      */
-    public function create(User $user)
+    public function create()
     {
-        return $user->role === 'admin';
+        $this->user->isAdmin();
     }
 
     /**
      * 更新処理
      */
-    public function update(User $user)
+    public function update()
     {
-        return $user->role === 'admin';
+        $this->user->isAdmin();
     }
 
     /**
      * 削除処理
      */
-    public function delete(User $user)
+    public function delete()
     {
-        return $user->role === 'admin';
+        $this->user->isAdmin();
     }
 }

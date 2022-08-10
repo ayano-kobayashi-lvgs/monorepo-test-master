@@ -78,28 +78,19 @@
                                 <span class="c-section__formLabel c-section__formLabel--required">必須</span>
                             </div>
                             <div class="c-section__formBox">
+                                @foreach(App\Enums\Role::getRoleValues() as $roleValue)
                                 <input
                                     id="radio1"
                                     class="c-section__radioBtn"
                                     type="radio"
                                     name="role"
-                                    value="user">
+                                    value="{{ $roleValue }}">
                                 <label
                                     for="radio1"
                                     class="c-section__radioBtnLabel">
-                                    ユーザー
+                                    {{ trans("roles.${roleValue}") }}
                                 </label>
-                                <input
-                                    id="radio2"
-                                    class="c-section__radioBtn"
-                                    type="radio"
-                                    name="role"
-                                    value="admin">
-                                <label
-                                    for="radio2"
-                                    class="c-section__RadioBtnLabel">
-                                    管理者
-                                </label>
+                                @endforeach
                             </div>
                             <p class="c-section__formError">{{ $errors->first('role') }}</p>
                         </div>
