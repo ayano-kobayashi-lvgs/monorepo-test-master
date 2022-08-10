@@ -72,6 +72,30 @@
         font-size: $font-ms;
     }
 
+    &__radioBtn {
+        display: none;
+
+        &:checked+label {
+            background-color: $c-dark-gray;
+            border: 2px solid $c-dark-gray;
+            color: $c-white;
+        }
+
+        &:hover+label {
+            cursor: pointer;
+        }
+    }
+
+    &__radioBtnLabel {
+        background-color: $c-white;
+        border: 2px solid $c-dark-gray;
+        border-radius: 20px;
+        padding: 2px 15px;
+        color: $c-dark-gray;
+        font-size: $font-ms;
+        font-weight: bold;
+    }
+
     &__btn {
         background-color: $c-dark-navy-01;
         color: $c-white;

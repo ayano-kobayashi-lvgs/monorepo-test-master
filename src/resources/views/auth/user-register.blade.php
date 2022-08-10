@@ -79,14 +79,29 @@
                             </div>
                             <div class="c-section__formBox">
                                 <input
+                                    id="radio1"
+                                    class="c-section__radioBtn"
                                     type="radio"
                                     name="role"
-                                    value="user">ユーザー
+                                    value="user">
+                                <label
+                                    for="radio1"
+                                    class="c-section__radioBtnLabel">
+                                    ユーザー
+                                </label>
                                 <input
+                                    id="radio2"
+                                    class="c-section__radioBtn"
                                     type="radio"
                                     name="role"
-                                    value="admin">管理者
+                                    value="admin">
+                                <label
+                                    for="radio2"
+                                    class="c-section__RadioBtnLabel">
+                                    管理者
+                                </label>
                             </div>
+                            <p class="c-section__formError">{{ $errors->first('role') }}</p>
                         </div>
                         <div class="c-section__btnWrap">
                             <button
