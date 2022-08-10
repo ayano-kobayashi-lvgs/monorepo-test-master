@@ -80,13 +80,13 @@
                             <div class="c-section__formBox">
                                 @foreach(App\Enums\Role::getRoleValues() as $roleValue)
                                 <input
-                                    id="radio1"
+                                    id="{{ $roleValue }}"
                                     class="c-section__radioBtn"
                                     type="radio"
                                     name="role"
                                     value="{{ $roleValue }}">
                                 <label
-                                    for="radio1"
+                                    for="{{ $roleValue }}"
                                     class="c-section__radioBtnLabel">
                                     {{ trans("roles.${roleValue}") }}
                                 </label>

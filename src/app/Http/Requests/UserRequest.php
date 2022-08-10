@@ -32,7 +32,7 @@ class UserRequest extends BaseRequest
                 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,24}$/'
             ],
             'role' => [
-                'required'
+                'required',
             ],
         ];
     }

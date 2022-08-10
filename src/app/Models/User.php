@@ -44,7 +44,7 @@ class User extends Authenticatable
     /**
      * 管理者権限の判断ロジック
      */
-    public function isAdmin()
+    public function isAdmin(): bool
     {
         return Role::isAdmin($this->role);
     }
@@ -52,7 +52,7 @@ class User extends Authenticatable
     /**
      * ユーザ登録処理
      */
-    public function create(array $values)
+    public function create(array $values): mixed
     {
         return parent::create($values);
     }

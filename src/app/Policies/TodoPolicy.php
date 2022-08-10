@@ -17,24 +17,24 @@ class TodoPolicy
     /**
      * 登録処理
      */
-    public function create()
+    public function create(User $user): void
     {
-        $this->user->isAdmin();
+        $user->isAdmin($user);
     }
 
     /**
      * 更新処理
      */
-    public function update()
+    public function update(User $user): void
     {
-        $this->user->isAdmin();
+        $user->isAdmin($user);
     }
 
     /**
      * 削除処理
      */
-    public function delete()
+    public function delete(User $user): void
     {
-        $this->user->isAdmin();
+        $user->isAdmin($user);
     }
 }

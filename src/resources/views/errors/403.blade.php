@@ -15,7 +15,6 @@
                     <div class="c-section__btnWrap">
                         <p
                             class="c-btn c-section__btn c-section__btn--small">
-                            {{--<a href="{{ url()->previous() }}">戻る</a>--}}
                             <a href="{{ route('todos.index') }}">Todo一覧に戻る</a>
                         </p>
                     </div>

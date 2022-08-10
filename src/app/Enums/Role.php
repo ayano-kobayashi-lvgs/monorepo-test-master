@@ -15,9 +15,9 @@ class Role extends Enum
     const MEMBER = 'member';
 
     /**
-     * 権限のDB値 全件取得
+     * 権限名の全件取得
      */
-    public static function getRoleValues()
+    public static function getRoleValues(): array
     {
         return Role::toArray();
     }
@@ -25,7 +25,7 @@ class Role extends Enum
     /**
      * 管理者権限の判断ロジック
      */
-    public static function isAdmin($role): bool
+    public static function isAdmin(string $role): bool
     {
         return $role === self::ADMIN;
     }

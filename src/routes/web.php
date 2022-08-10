@@ -28,13 +28,10 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
 
 Route::group(['middleware' => 'auth', 'prefix' => 'todos', 'as' => 'todos.'], function () {
     Route::get('/', [TodoController::class, 'index'])->name('index');
+    Route::get('/create', [TodoController::class, 'create'])->can('isAdmin')->name('create');
+    Route::get('/{id}/edit', [TodoController::class, 'edit'])->whereNumber('id')->can('isAdmin')->name('edit');
     Route::get('/{id}', [TodoController::class, 'show'])->whereNumber('id')->name('show');
     Route::post('/store', [TodoController::class, 'store'])->can('create', Todo::class)->name('store');
     Route::put('/{id}', [TodoController::class, 'update'])->whereNumber('id')->can('update', Todo::class)->name('update');
     Route::delete('/{id}', [TodoController::class, 'delete'])->whereNumber('id')->can('delete', Todo::class)->name('delete');
-});
-
-Route::group(['middleware' => ['auth', 'can:isAdmin'], 'prefix' => 'todos', 'as' => 'todos.'], function () {
-    Route::get('/create', [TodoController::class, 'create'])->name('create');
-    Route::get('/{id}/edit', [TodoController::class, 'edit'])->whereNumber('id')->name('edit');
 });

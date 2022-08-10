@@ -20,14 +20,14 @@ class AppServiceProvider extends ServiceProvider
     /**
      * register
      */
-    public function register()
+    public function register(): void
     {
     }
 
     /**
      * ゲートの定義
      */
-    public function boot()
+    public function boot(): void
     {
         $this->registerPolicies();
 
