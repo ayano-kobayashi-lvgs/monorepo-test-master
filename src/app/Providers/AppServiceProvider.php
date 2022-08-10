@@ -17,7 +17,6 @@ class AppServiceProvider extends ServiceProvider
         Todo::class  => TodoPolicy::class,
     ];
 
-    // こちらも不要であれば削除したほうが良いですか？
     /**
      * register
      */

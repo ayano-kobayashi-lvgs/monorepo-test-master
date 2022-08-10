@@ -10,10 +10,7 @@ use App\Models\User;
 class TodoPolicy
 {
     /**
-     * Determine whether the user can create models.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * 登録処理
      */
     public function create(User $user)
     {
@@ -21,11 +18,7 @@ class TodoPolicy
     }
 
     /**
-     * Determine whether the user can update the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Todo  $todo
-     * @return \Illuminate\Auth\Access\Response|bool
+     * 更新処理
      */
     public function update(User $user)
     {
@@ -33,11 +26,7 @@ class TodoPolicy
     }
 
     /**
-     * Determine whether the user can delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Todo  $todo
-     * @return \Illuminate\Auth\Access\Response|bool
+     * 削除処理
      */
     public function delete(User $user)
     {
