@@ -93,7 +93,7 @@ class TodoController extends Controller
      * @param integer $id
      * @return RedirectResponse
      */
-    public function update(Request $request, int $id, Todo $todo): RedirectResponse
+    public function update(Request $request, int $id): RedirectResponse
     {
         $this->todo->updateTodo($id, $request->all(['title']));
         $todo = $this->todo->getById($id);
@@ -110,7 +110,7 @@ class TodoController extends Controller
      * @param  int  $id
      * @return RedirectResponse
      */
-    public function delete(Request $request, int $id, Todo $todo): RedirectResponse
+    public function delete(Request $request, int $id): RedirectResponse
     {
         $todo = $this->todo->getById($id);
         $todo->delete();
