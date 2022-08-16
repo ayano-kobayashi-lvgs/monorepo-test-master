@@ -19,7 +19,7 @@ class TodoPolicy
      */
     public function create(User $user): bool
     {
-        $user->isAdmin($user);
+        return $user->isAdmin($user);
     }
 
     /**
@@ -27,7 +27,7 @@ class TodoPolicy
      */
     public function update(User $user): bool
     {
-        $user->isAdmin($user);
+        return $user->isAdmin($user);
     }
 
     /**
@@ -35,6 +35,6 @@ class TodoPolicy
      */
     public function delete(User $user): bool
     {
-        $user->isAdmin($user);
+        return $user->isAdmin($user);
     }
 }
