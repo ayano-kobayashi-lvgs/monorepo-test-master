@@ -15,11 +15,11 @@
                     <table class="table c-table">
                         <tr>
                             <th>id</th>
-                            <td>{{$todo->id}}</td>
+                            <td>{{ $todo->id }}</td>
                         </tr>
                         <tr>
-                            <th>title</th>
-                            <td>{{$todo->title}}</td>
+                            <td>title</td>
+                            <td>{{ $todo->title }}</td>
                         </tr>
                     </table>
                     <a

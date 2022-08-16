@@ -26,8 +26,7 @@
                             <input
                                 class="form-control"
                                 name="title"
-                                type="text"
-                                >
+                                type="text">
                         </div>
                         <button
                             class="btn btn-primary"

@@ -14,7 +14,7 @@
                     <form
                         class="c-section__form p-register__form"
                         action="{{ route('auth.completeRegister') }}"
-                        method="post">
+                        method="POST">
                         @csrf
                         <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
