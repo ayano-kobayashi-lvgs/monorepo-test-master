@@ -19,7 +19,7 @@ class Role extends Enum
      */
     public static function getRoleValues(): array
     {
-        return Role::toArray();
+        return self::toArray();
     }
 
     /**

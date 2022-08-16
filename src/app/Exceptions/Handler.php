@@ -60,7 +60,7 @@ class Handler extends ExceptionHandler
     {
         // HTTPでない例外が起これば、HTTP例外の500に変更する
         if (!$this->isHttpException($e) && !config('app.debug')) {
-            $e = new HttpException(500, $e->getMessage(), $e);
+            $e = new HttpException(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getMessage(), $e);
         }
 
         return parent::prepareResponse($request, $e);

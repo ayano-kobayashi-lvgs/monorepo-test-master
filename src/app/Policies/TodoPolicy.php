@@ -17,7 +17,7 @@ class TodoPolicy
     /**
      * 登録処理
      */
-    public function create(User $user): void
+    public function create(User $user): bool
     {
         $user->isAdmin($user);
     }
@@ -25,7 +25,7 @@ class TodoPolicy
     /**
      * 更新処理
      */
-    public function update(User $user): void
+    public function update(User $user): bool
     {
         $user->isAdmin($user);
     }
@@ -33,7 +33,7 @@ class TodoPolicy
     /**
      * 削除処理
      */
-    public function delete(User $user): void
+    public function delete(User $user): bool
     {
         $user->isAdmin($user);
     }
