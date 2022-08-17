@@ -72,6 +72,28 @@
                             </div>
                             <p class="c-section__formError">{{ $errors->first('password_confirmation') }}</p>
                         </div>
+                        <div class="c-section__formItem">
+                            <div class="c-section__formTitleWrap">
+                                <label class="c-section__formTitle">権限</label>
+                                <span class="c-section__formLabel c-section__formLabel--required">必須</span>
+                            </div>
+                            <div class="c-section__formBox">
+                                @foreach(App\Enums\Role::getRoleValues() as $roleValue)
+                                <input
+                                    id="{{ $roleValue }}"
+                                    class="c-section__radioBtn"
+                                    type="radio"
+                                    name="role"
+                                    value="{{ $roleValue }}">
+                                <label
+                                    for="{{ $roleValue }}"
+                                    class="c-section__radioBtnLabel">
+                                    {{ trans("roles.${roleValue}") }}
+                                </label>
+                                @endforeach
+                            </div>
+                            <p class="c-section__formError">{{ $errors->first('role') }}</p>
+                        </div>
                         <div class="c-section__btnWrap">
                             <button
                                 class="c-btn c-section__btn c-section__btn--big"

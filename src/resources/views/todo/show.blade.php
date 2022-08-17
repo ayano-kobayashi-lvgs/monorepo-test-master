@@ -22,8 +22,8 @@
                             <td>{{ $todo->title }}</td>
                         </tr>
                     </table>
-                    <a 
-                        class="btn btn-info"            
+                    <a
+                        class="btn btn-info"
                         href="{{ route('todos.index') }}">
                         戻る
                     </a>

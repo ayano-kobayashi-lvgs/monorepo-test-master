@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section('title', 'Todo登録')
 @section('css')
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 <x-menu />
 <div class="container-fluid">
@@ -28,7 +28,7 @@
                                 name="title"
                                 type="text">
                         </div>
-                        <button 
+                        <button
                             class="btn btn-primary"
                             type="submit">
                             登録

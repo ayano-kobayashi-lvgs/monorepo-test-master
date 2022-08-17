@@ -1,9 +1,9 @@
 /*--------------------------------------*
  * menu
  *--------------------------------------*/
- @use "../../foundation/variable" as *;
+@use "../../foundation/variable" as *;
 
- .c-menu {
+.c-menu {
     display: flex;
     justify-content: space-between;
     padding: 0.8em;
