@@ -1,5 +1,5 @@
 @extends("layouts.app")
-@section('title', 'Todo登録')
+@section('title', __('todo.todo_register'))
 @section('css')
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
@@ -9,19 +9,19 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header c-table__title">
-                    登録画面
+                    {{ __('todo.register_page') }}
                 </div>
                 <div class="card-body">
                     <form
                         class="c-form"
                         method="POST"
-                        action="{{ route('todos.store') }}">
+                        action="{{ route('todos.store', ['lang' => session('locale')]) }}">
                         @csrf
                         <div class="form-group">
                             <label
                                 for="title"
                                 class="control-label">
-                                タイトル
+                                {{ __('todo.title') }}
                             </label>
                             <input
                                 class="form-control"
@@ -31,7 +31,7 @@
                         <button
                             class="btn btn-primary"
                             type="submit">
-                            登録
+                            {{ __('todo.register') }}
                         </button>
                     </form>
                 </div>

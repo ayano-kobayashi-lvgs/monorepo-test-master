@@ -25,14 +25,4 @@ class AuthRequest extends BaseRequest
             ],
         ];
     }
-
-    /**
-     * Messages
-     */
-    public function messages()
-    {
-        return array_merge([
-            'password.regex' => '英大文字・小文字・数字の組み合わせ(8~24桁)で入力してください。',
-        ], BaseRequest::BASE_RULES);
-    }
 }

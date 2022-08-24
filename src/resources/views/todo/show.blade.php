@@ -1,5 +1,5 @@
 @extends("layouts.app")
-@section('title', 'Todo詳細')
+@section('title', __('todo.todo_details'))
 @section('css')
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
@@ -9,23 +9,23 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header c-table__title">
-                    詳細画面
+                    {{ __('todo.detail_page') }}
                 </div>
                 <div class="card-body">
                     <table class="table c-table">
                         <tr>
-                            <th>id</th>
+                            <th>{{ __('todo.id') }}</th>
                             <td>{{ $todo->id }}</td>
                         </tr>
                         <tr>
-                            <td>title</td>
+                            <th>{{ __('todo.title') }}</th>
                             <td>{{ $todo->title }}</td>
                         </tr>
                     </table>
                     <a
                         class="btn btn-info"
-                        href="{{ route('todos.index') }}">
-                        戻る
+                        href="{{ route('todos.index', ['lang' => session('locale')]) }}">
+                        {{ __('todo.return') }}
                     </a>
                 </div>
             </div>

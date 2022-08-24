@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ログイン</title>
+        <title>{{ __('user.todo_login') }}</title>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="icon" href="{{ asset('/img/gopher.gif') }}" type="image/gif" >
     </head>
@@ -13,19 +13,19 @@
                 <div class="c-section__box p-login__box">
                     <div class="c-section__boxInner p-login__boxInner">
                         <h1 class="c-section__title p-login__title">
-                            Todoログイン
+                            {{ __('user.todo_login') }}
                         </h1>
                         <form
                             class="c-section__form"
-                            action="{{ route('auth.login') }}"
+                            action="{{ route('auth.login', ['lang' => session('locale')]) }}"
                             method="post">
                             @csrf
                             @if(session('isLoginError'))
-                            <p class="c-section__formError">メールアドレスまたはパスワードが一致しません。</p>
+                            <p class="c-section__formError">{{ __('user.login_error') }}</p>
                             @endif
                             <div class="c-section__formItem p-login__formItem">
                                 <div class="c-section__formTitleWrap">
-                                    <label class="c-section__formTitle">メールアドレス</label>
+                                    <label class="c-section__formTitle">{{ __('user.mailaddress') }}</label>
                                 </div>
                                 <div class="c-section__formBox">
                                     <input
@@ -39,7 +39,7 @@
                             </div>
                             <div class="c-section__formItem p-login__formItem">
                                 <div class="c-section__formTitleWrap">
-                                    <label class="c-section__formTitle">パスワード</label>
+                                    <label class="c-section__formTitle">{{ __('user.password') }}</label>
                                 </div>
                                 <div class="c-section__formBox">
                                     <input
@@ -56,13 +56,24 @@
                                     type="submit"
                                     name="action"
                                     value="send">
-                                    ログイン
+                                    {{ __('user.login') }}
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+            <a
+                class="c-section__lang"
+                href="{{ route(Route::currentRouteName(), ['lang' => 'ja']) }}">
+                {{ config('languages.ja') }}
+            </a>
+            <span class="c-section__lang">/</span>
+            <a
+                class="c-section__lang"
+                href="{{ route(Route::currentRouteName(), ['lang' => 'en']) }}">
+                {{ config('languages.en') }}
+            </a>
         </div>
     </body>
 </html>

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
  * LogoutController
  */
 class LogoutController extends Controller
-{    
+{
     /**
      * ログアウト処理
      */
@@ -18,10 +18,12 @@ class LogoutController extends Controller
     {
         Auth::logout();
 
+        $lang = session('locale');
+
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-        
-        return redirect()->route('auth.login');
+
+        return redirect()->route('auth.login', ['lang' => $lang]);
     }
 }

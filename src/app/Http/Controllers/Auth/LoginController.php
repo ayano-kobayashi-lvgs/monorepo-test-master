@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     /**
      * ログイン画面表示
-     */ 
+     */
     public function index()
     {
         return view('auth.login');
@@ -25,11 +25,11 @@ class LoginController extends Controller
     public function login(AuthRequest $request)
     {
         if (!Auth::attempt($request->validated())) {
-            return redirect()->route('auth.login')->with('isLoginError', true);
+            return redirect()->route('auth.login', ['lang' => session('locale')])->with('isLoginError', true);
         }
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('todos.index'));
+        return redirect()->intended(route('todos.index', ['lang' => session('locale')]));
     }
 }
