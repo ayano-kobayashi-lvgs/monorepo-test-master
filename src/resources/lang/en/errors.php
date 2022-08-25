@@ -3,7 +3,6 @@
 return [
     'error' => 'Error',
     'to_login' => 'Login again',
-
     '400' => [
         'title' => 'Request Error',
         'message' => 'There is an error such as typo.'

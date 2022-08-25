@@ -66,13 +66,13 @@
             <a
                 class="c-section__lang"
                 href="{{ route(Route::currentRouteName(), ['lang' => 'ja']) }}">
-                {{ config('languages.ja') }}
+                {{ __("languages.".App\Enums\Locale::JAPAN) }}
             </a>
             <span class="c-section__lang">/</span>
             <a
                 class="c-section__lang"
                 href="{{ route(Route::currentRouteName(), ['lang' => 'en']) }}">
-                {{ config('languages.en') }}
+                {{ __("languages.".App\Enums\Locale::US) }}
             </a>
         </div>
     </body>

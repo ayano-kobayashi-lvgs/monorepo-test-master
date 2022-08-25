@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Enums\Locale;
 use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
@@ -19,22 +20,16 @@ class Language
         $locale = $request->route('lang');
 
         // 指定なしの場合、日本語表示
-        if (!in_array($locale, ['ja', 'en'])) {
+        if (!in_array($locale, Locale::values())) {
             $fallback = session('locale') ?: config('app.fallbacklocale');
-            $this->setLocale($fallback);
+            app()->setLocale($fallback);
+            session(['locale' => $fallback]);
+
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        $this->setLocale($locale);
-        return $next($request);
-    }
-
-    /**
-     * ロケール設定
-     */
-    private function setLocale(string $locale): void
-    {
         app()->setLocale($locale);
         session(['locale' => $locale]);
+        return $next($request);
     }
 }

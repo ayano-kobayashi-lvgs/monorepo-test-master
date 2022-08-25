@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::pattern('lang', '[a-z]{2}');
 Route::group(['prefix' => '{lang?}', 'middleware' => 'lang'], function () {
     Route::group(['prefix' => '/auth', 'as' => 'auth.'], function () {
         Route::get('/register', [UserController::class, 'showRegister'])->name('register');

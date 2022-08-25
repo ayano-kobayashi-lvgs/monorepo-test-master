@@ -54,11 +54,9 @@ class TodoController extends Controller
     {
         $todo = $this->todo->create($request->all(['title']));
 
-        $message = __('todo.registered');
-
         return redirect()->route('todos.index', ['lang' => session('locale')])->with(
             'status',
-            $todo->title . $message,
+            $todo->title . __('todo.registered'),
         );
     }
 
@@ -100,11 +98,9 @@ class TodoController extends Controller
         $this->todo->updateTodo($id, $request->all(['title']));
         $todo = $this->todo->getById($id);
 
-        $message = __('todo.updated');
-
         return redirect()->route('todos.index', ['lang' => session('locale')])->with(
             'status',
-            $todo->title . $message,
+            $todo->title . __('todo.updated'),
         );
     }
 
@@ -119,11 +115,9 @@ class TodoController extends Controller
         $todo = $this->todo->getById($id);
         $todo->delete();
 
-        $message = __('todo.deleted');
-
         return redirect()->route('todos.index', ['lang' => session('locale')])->with(
             'status',
-            $todo->title . $message,
+            $todo->title . __('todo.deleted'),
         );
     }
 }

@@ -18,12 +18,6 @@ class LogoutController extends Controller
     {
         Auth::logout();
 
-        $lang = session('locale');
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect()->route('auth.login', ['lang' => $lang]);
+        return redirect()->route('auth.login', ['lang' => session('locale')]);
     }
 }
