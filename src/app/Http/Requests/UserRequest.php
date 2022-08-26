@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\CustomPasswordValidation;
-
 /**
  * User FormRequest
  */
@@ -27,7 +25,7 @@ class UserRequest extends BaseRequest
                 'max:254',
             ],
             'password' => [
-                new CustomPasswordValidation,
+                'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,24}$/',
                 'confirmed',
             ],
             'password_confirmation' => [
