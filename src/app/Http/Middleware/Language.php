@@ -21,7 +21,7 @@ class Language
 
         // 指定なしの場合、日本語表示
         if (!in_array($locale, Locale::values())) {
-            $fallback = session('locale') ?: config('app.fallbacklocale');
+            $fallback = session('locale') ?: config('app.fallback_locale');
             app()->setLocale($fallback);
             session(['locale' => $fallback]);
 

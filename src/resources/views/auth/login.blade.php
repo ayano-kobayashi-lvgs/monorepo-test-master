@@ -63,17 +63,15 @@
                     </div>
                 </div>
             </div>
-            <a
-                class="c-section__lang"
-                href="{{ route(Route::currentRouteName(), ['lang' => 'ja']) }}">
-                {{ __("languages.".App\Enums\Locale::JAPAN) }}
-            </a>
-            <span class="c-section__lang">/</span>
-            <a
-                class="c-section__lang"
-                href="{{ route(Route::currentRouteName(), ['lang' => 'en']) }}">
-                {{ __("languages.".App\Enums\Locale::US) }}
-            </a>
+            <div>
+                @foreach(App\Enums\Locale::getLocaleValues() as $localeValue)
+                <a
+                    class="c-section__lang"
+                    href="{{ route(Route::currentRouteName(), ['lang' => $localeValue]) }}">
+                    {{ __("languages.".$localeValue) }}
+                </a>
+                @endforeach
+            </div>
         </div>
     </body>
 </html>

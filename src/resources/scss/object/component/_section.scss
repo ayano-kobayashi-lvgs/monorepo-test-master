@@ -133,5 +133,22 @@
         color: $c-dark-gray;
         font-size: $font-m;
         font-weight: bold;
+        position: relative;
+        margin-right: .5em;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 15px;
+            width: 1px;
+            top: 2px;
+            //left: 100%;
+            background-color: $c-dark-gray;
+        }
+
+        &:last-child::after {
+            height: 0px;
+            width: 0px;
+        }
     }
 }
