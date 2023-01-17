@@ -3,13 +3,17 @@
 namespace App\Models;
 
 use App\Enums\Role;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
 /**
  * User
  */
-class User extends Authenticatable
+class User extends Authenticatable implements AuthenticatableContract
 {
+    use HasFactory;
+
     /**
      * The attributes that are mass assignable.
      *
