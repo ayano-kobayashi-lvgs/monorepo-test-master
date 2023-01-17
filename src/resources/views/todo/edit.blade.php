@@ -1,5 +1,5 @@
 @extends("layouts.app")
-@section('title', 'Todo編集')
+@section('title', __('todo.todo_update'))
 @section('css')
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
@@ -9,23 +9,23 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header c-table__title">
-                    編集画面
+                    {{ __('todo.edit_page') }}
                 </div>
                 <div class="card-body">
                     <form
                         class="form-horizontal c-form"
                         method="POST"
-                        action="{{ route('todos.update', ['id' => $todo->id]) }}">
+                        action="{{ route('todos.update', ['lang' => session('locale'), 'id' => $todo->id]) }}">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <div>ID</div>
+                            <div>{{ __('todo.id') }}</div>
                             <div>{{ $todo->id }}</div>
                         <hr>
                         <label
                             for="title"
                             class="control-label">
-                            タイトル
+                            {{ __('todo.title') }}
                         </label>
                         <input
                             class="form-control"
@@ -36,7 +36,7 @@
                         <button
                             class="btn btn-primary"
                             type="submit">
-                            更新
+                            {{ __('todo.update') }}
                         </button>
                     </form>
                 </div>

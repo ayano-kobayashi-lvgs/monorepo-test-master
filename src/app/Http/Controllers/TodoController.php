@@ -50,13 +50,13 @@ class TodoController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, string $lang): RedirectResponse
     {
         $todo = $this->todo->create($request->all(['title']));
 
-        return redirect()->route('todos.index')->with(
+        return redirect()->route('todos.index', ['lang' => session('locale')])->with(
             'status',
-            "{$todo->title}を登録しました",
+            $todo->title . __('todo.registered'),
         );
     }
 
@@ -66,7 +66,7 @@ class TodoController extends Controller
      * @param  int  $id
      * @return View
      */
-    public function show($id): View
+    public function show(string $lang, int $id): View
     {
         $todo = $this->todo->getById($id);
 
@@ -79,7 +79,7 @@ class TodoController extends Controller
      * @param  int  $id
      * @return View
      */
-    public function edit($id): View
+    public function edit(string $lang, int $id): View
     {
         $todo = $this->todo->getById($id);
 
@@ -93,14 +93,14 @@ class TodoController extends Controller
      * @param integer $id
      * @return RedirectResponse
      */
-    public function update(Request $request, int $id): RedirectResponse
+    public function update(Request $request, string $lang, int $id): RedirectResponse
     {
         $this->todo->updateTodo($id, $request->all(['title']));
         $todo = $this->todo->getById($id);
 
-        return redirect()->route('todos.index')->with(
+        return redirect()->route('todos.index', ['lang' => session('locale')])->with(
             'status',
-            "{$todo->title}を更新しました",
+            $todo->title . __('todo.updated'),
         );
     }
 
@@ -110,14 +110,14 @@ class TodoController extends Controller
      * @param  int  $id
      * @return RedirectResponse
      */
-    public function delete(Request $request, int $id): RedirectResponse
+    public function delete(Request $request, string $lang, int $id): RedirectResponse
     {
         $todo = $this->todo->getById($id);
         $todo->delete();
 
-        return redirect()->route('todos.index')->with(
+        return redirect()->route('todos.index', ['lang' => session('locale')])->with(
             'status',
-            "{$todo->title}を削除しました",
+            $todo->title . __('todo.deleted'),
         );
     }
 }

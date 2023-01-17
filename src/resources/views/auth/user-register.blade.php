@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'ユーザ登録')
+@section('title', __('user.user_register'))
 @section('css')
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
@@ -9,17 +9,17 @@
             <div class="c-section__box">
                 <div class="c-section__boxInner p-register__boxInner">
                     <h1 class="c-section__title">
-                        ユーザ登録
+                        {{ __('user.user_register') }}
                     </h1>
                     <form
                         class="c-section__form p-register__form"
-                        action="{{ route('auth.completeRegister') }}"
+                        action="{{ route('auth.completeRegister', ['lang' => session('locale')]) }}"
                         method="POST">
                         @csrf
                         <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
-                                <label class="c-section__formTitle">氏名</label>
-                                <span class="c-section__formLabel c-section__formLabel--required">必須</span>
+                                <label class="c-section__formTitle">{{ __('user.full_name') }}</label>
+                                <span class="c-section__formLabel c-section__formLabel--required">{{ __('user.required') }}</span>
                             </div>
                             <div class="c-section__formBox">
                                 <input
@@ -33,8 +33,8 @@
                         </div>
                         <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
-                                <label class="c-section__formTitle">メールアドレス</label>
-                                <span class="c-section__formLabel c-section__formLabel--required">必須</span>
+                                <label class="c-section__formTitle">{{ __('user.mailaddress') }}</label>
+                                <span class="c-section__formLabel c-section__formLabel--required">{{ __('user.required') }}</span>
                             </div>
                             <div class="c-section__formBox">
                                 <input
@@ -48,8 +48,8 @@
                         </div>
                         <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
-                                <label class="c-section__formTitle">パスワード</label>
-                                <span class="c-section__formLabel c-section__formLabel--required">必須</span>
+                                <label class="c-section__formTitle">{{ __('user.password') }}</label>
+                                <span class="c-section__formLabel c-section__formLabel--required">{{ __('user.required') }}</span>
                             </div>
                             <div class="c-section__formBox">
                                 <input
@@ -61,8 +61,8 @@
                         </div>
                         <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
-                                <label class="c-section__formTitle">パスワード(確認)</label>
-                                <span class="c-section__formLabel c-section__formLabel--required">必須</span>
+                                <label class="c-section__formTitle">{{ __('user.password_confirmation') }}</label>
+                                <span class="c-section__formLabel c-section__formLabel--required">{{ __('user.required') }}</span>
                             </div>
                             <div class="c-section__formBox">
                                 <input
@@ -74,8 +74,8 @@
                         </div>
                         <div class="c-section__formItem">
                             <div class="c-section__formTitleWrap">
-                                <label class="c-section__formTitle">権限</label>
-                                <span class="c-section__formLabel c-section__formLabel--required">必須</span>
+                                <label class="c-section__formTitle">{{ __('user.role') }}</label>
+                                <span class="c-section__formLabel c-section__formLabel--required">{{ __('user.required') }}</span>
                             </div>
                             <div class="c-section__formBox">
                                 @foreach(App\Enums\Role::getRoleValues() as $roleValue)
@@ -88,7 +88,7 @@
                                 <label
                                     for="{{ $roleValue }}"
                                     class="c-section__radioBtnLabel">
-                                    {{ trans("roles.${roleValue}") }}
+                                    {{ __("user.${roleValue}") }}
                                 </label>
                                 @endforeach
                             </div>
@@ -100,7 +100,7 @@
                                 type="submit"
                                 name="action"
                                 value="send">
-                                登録
+                                {{ __('user.register') }}
                             </button>
                         </div>
                     </form>
