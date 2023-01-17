@@ -1,0 +1,22 @@
+/*--------------------------------------*
+ * form
+ *--------------------------------------*/
+@use "../../foundation/variable" as *;
+
+.c-form {
+    font-size: $font-m;
+
+    &__inner {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: 1px solid $c-light-gray-03;
+        border-radius: 5px;
+        font-size: $font-ms;
+        color: $c-black;
+        outline: none;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+}

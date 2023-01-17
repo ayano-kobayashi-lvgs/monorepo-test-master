@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'todo_list' => 'TODO List',
+    'hello' => 'Hello!',
+    'mr_or_ms' => '',
+    'logout' => 'Logout',
+    'list' => 'List',
+    'id' => 'ID',
+    'title' => 'Title',
+    'details' => 'Show more',
+    'register' => 'Add new',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'todo_register' => 'TODO Create',
+    'register_page' => 'Create',
+    'registered' => ' registered!',
+    'todo_edit' => 'TODO Edit',
+    'edit_page' => 'Edit todo\'s title',
+    'update' => 'Update',
+    'updated' => ' updated!',
+    'deleted' => ' deleted!',
+    'todo_details' => 'TODO Details',
+    'detail_page' => 'Details',
+    'return' => 'Return',
+];

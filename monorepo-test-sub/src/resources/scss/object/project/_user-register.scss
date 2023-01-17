@@ -1,0 +1,12 @@
+/*--------------------------------------*
+ * user-register
+ *--------------------------------------*/
+@use "../../foundation/variable" as *;
+
+.p-register {
+    padding: 5% 20%;
+
+    &__boxInner {
+        width: 75%;
+    }
+}

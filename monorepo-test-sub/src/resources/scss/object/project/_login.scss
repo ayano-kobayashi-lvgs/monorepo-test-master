@@ -1,0 +1,9 @@
+@use "../../foundation/variable" as *;
+
+.p-login {
+    padding: 5% 25%;
+
+    &__boxInner {
+        width: 65%;
+    }
+}
